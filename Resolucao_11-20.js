@@ -18,15 +18,15 @@ const desafio12 = (valor, codigoPagamento) => {
   switch (true) {
     case codigoPagamento === "A":
       novoValor = valor * 0.75;
-      console.log(`O pagamento vai ser de ${novoValor}`);
+      console.log(`O pagamento vai ser de ${novoValor.toFixed(2)}`);
       break;
     case codigoPagamento === "B":
       novoValor = valor * 0.9;
-      console.log(`O pagamento vai ser de ${novoValor}`);
+      console.log(`O pagamento vai ser de ${novoValor.toFixed(2)}`);
       break;
     case codigoPagamento === "C":
       novoValor = valor;
-      console.log(`O pagamento vai ser de ${novoValor}`);
+      console.log(`O pagamento vai ser de ${novoValor.toFixed(2)}`);
       break;
     case codigoPagamento === "D":
       novoValor = valor * 1.1;
@@ -51,12 +51,11 @@ const desafio14 = (dataNascimento) => {
   const mesAtual = dataAtual.getMonth() + 1;
   const diaAtual = dataAtual.getDate();
   const diasPecorridosTotal = anoAtual * 365 + mesAtual * 30 + diaAtual;
-  const aniversario = dataNascimento.split("");
-  const diaNascimento = parseInt(aniversario[0] + aniversario[1]);
-  const mesNascimento = parseInt(aniversario[3] + aniversario[4]);
-  const anoNascimento = parseInt(
-    aniversario[6] + aniversario[7] + aniversario[8] + aniversario[9]
-  );
+  const aniversario = dataNascimento.split("/");
+  console.log(aniversario);
+  const diaNascimento = parseInt(aniversario[0]);
+  const mesNascimento = parseInt(aniversario[1]);
+  const anoNascimento = parseInt(aniversario[2]);
   const diasAteNascer =
     anoNascimento * 365 + mesNascimento * 30 + diaNascimento;
   const diasVivos = diasPecorridosTotal - diasAteNascer;
@@ -82,13 +81,12 @@ const desafio15 = (lado1, lado2, lado3) => {
     case lado1 == lado2 && lado2 == lado3:
       classificacao = "Equilatero";
       break;
-    case lado1 == lado2 &&
-      (lado2 !== lado3) | (lado2 == lado3) &&
-      (lado3 !== lado1) | (lado1 === lado3) &&
-      lado3 !== lado2:
+    case (lado1 === lado2 && lado1 !== lado3) ||
+      (lado2 === lado3 && lado2 !== lado1) ||
+      (lado1 === lado3 && lado1 !== lado2):
       classificacao = "Isósceles";
       break;
-    case lado1 !== lado2 && lado2 !== lado3:
+    case lado1 !== lado2 && lado1 !== lado3:
       classificacao = "Escaleno";
       break;
     default:
@@ -103,7 +101,7 @@ const desafio15 = (lado1, lado2, lado3) => {
 //16 - Faça um algoritmo que leia uma temperatura em Fahrenheit e calcule a temperatura correspondente em grau Celsius. Imprima na tela as duas temperaturas.
 //Fórmula: C = (5 * ( F-32) / 9)
 const desafio16 = (F) => {
-  const Celsius = [5 * (F - 32)] / 9;
+  const Celsius = (5 * (F - 32)) / 9;
   console.log(
     `A temperatura em Celsius é: ${Celsius.toFixed(
       2
@@ -113,18 +111,21 @@ const desafio16 = (F) => {
 //17 - Francisco tem 1,50m e cresce 2 centímetros por ano, enquanto Sara tem 1,10m e cresce 3 centímetros por ano. Faça um algoritmo que calcule e imprima na tela em quantos anos serão necessários para que Francisco seja maior que Sara.
 
 const desafio17 = () => {
-  let x = 0;
-
-  const alturaFrancisco = 150 + 2 * x;
-  const alturaSara = 110 + 3 * x;
-
-  for (x = 0; ; x++) {
-    console.log(`Serão necessário: ${x} anos`);
-    if (alturaFrancisco > alturaSara) {
+  for (let x = 0; ; x++) {
+    const alturaFrancisco = 150 + 2 * x;
+    const alturaSara = 110 + 3 * x;
+    console.log(alturaFrancisco, alturaSara);
+    const arrayAnos = [x];
+    const anosNecessarios = arrayAnos.pop();
+    console.log(
+      `Anos necessarios: ${anosNecessarios} anos para que Francisco permaneça maior que Sara`
+    );
+    if (alturaFrancisco <= alturaSara) {
       break;
     }
   }
 };
+
 //18 - Faça um algoritmo que imprima na tela a tabuada de 1 até 10.
 const desafio18 = () => {
   for (let i = 1; i <= 10; i++) {
@@ -144,7 +145,6 @@ const desafio19 = (number) => {
 const desafio20 = () => {
   const max = 100;
   const min = 0;
-  const valorAleatorio = Math.floor(Math.random() * (max - min) + min);
+  const valorAleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
   console.log(valorAleatorio);
 };
-desafio20();
