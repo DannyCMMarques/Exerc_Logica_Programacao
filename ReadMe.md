@@ -61,3 +61,30 @@ Fórmula: C = (5 * ( F-32) / 9)
 22 - Faça um algoritmo que efetue o cálculo do salário líquido de um professor. As informações fornecidas serão: valor da hora aula, número de aulas lecionadas no mês e percentual de desconto do INSS. Imprima na tela o salário líquido final.
 
 23 - Faça algoritmo que leia o nome e a idade de uma peso e imprima na tela o nome da pessoa e se ela é maior ou menor de idade.
+
+24 - Faça um algoritmo que calcule a quantidade de litros de combustível gastos em uma viagem, sabendo que o carro faz 12km com um litro. Deve-se fornecer ao usuário o tempo que será gasto na viagem a sua velocidade média, distância percorrida e a quantidade de litros utilizados para fazer a viagem.
+Fórmula: distância = tempo x velocidade.
+litros usados = distância / 12.
+
+25-Encontre o maior número em uma lista: Escreva um algoritmo para encontrar o maior número em uma lista de valores.
+
+26-Encontre o menor número em uma lista: Escreva um programa para encontrar o menor número em uma lista de valores.
+
+27-Inverta uma string: Desenvolva um algoritmo que inverta uma string fornecida como entrada.
+
+28-Calcule o fatorial de um número: Escreva um programa que calcule o fatorial de um número dado.
+
+29-Ordenação de lista: Implemente um algoritmo de ordenação para ordenar uma lista de valores.
+
+30-Verifique se uma palavra é um palíndromo: Crie um programa que identifique se uma palavra é um palíndromo.
+
+31-Verifique se dois conjuntos são iguais: Desenvolva um algoritmo para verificar se dois conjuntos possuem os mesmos elementos.
+
+32-Encontre o número que falta: Dada uma sequência de números de 1 a N, encontre o número que está faltando.
+
+
+34-Converta um número decimal para binário: Implemente um algoritmo que converta um número decimal para seu equivalente em binário.
+
+Fontes:
+https://www.dio.me/articles/lista-de-exercicios-para-treinar-logica-de-programacao
+https://awari.com.br/10-exercicios-de-logica-de-programacao-para-aprimorar-suas-habilidades/
